@@ -237,15 +237,6 @@ packer.startup {
       end,
     }
 
-    -- Neogit
-    use {
-      "TimUntersberger/neogit",
-      requires = 'nvim-lua/plenary.nvim',
-      config = function()
-        require("configs.neogit").config()
-      end,
-    }
-
     -- Start screen
     use {
       "glepnir/dashboard-nvim",
@@ -287,6 +278,11 @@ packer.startup {
       config = function()
         require"surround".setup {mappings_style = "sandwich"}
       end,
+    }
+
+    -- Fugitive
+    use {
+      "tpope/vim-fugitive"
     }
 
     -- Repeat
