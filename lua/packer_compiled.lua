@@ -165,15 +165,6 @@ _G.packer_plugins = {
     path = "/home/natanmoura/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
-  ["lightspeed.nvim"] = {
-    load_after = {
-      ["nvim-treesitter"] = true
-    },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/natanmoura/.local/share/nvim/site/pack/packer/opt/lightspeed.nvim",
-    url = "https://github.com/ggandor/lightspeed.nvim"
-  },
   ["lspsaga.nvim"] = {
     config = { "\27LJ\2\2B\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\24configs.lsp.lspsaga\frequire\0" },
     loaded = false,
@@ -266,7 +257,6 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "lightspeed.nvim" },
     commands = { "TSInstall", "TSInstallInfo", "TSInstallSync", "TSUninstall", "TSUpdate", "TSUpdateSync", "TSDisableAll", "TSEnableAll" },
     config = { "\27LJ\2\2A\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\23configs.treesitter\frequire\0" },
     loaded = false,
@@ -294,6 +284,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/natanmoura/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["pounce.nvim"] = {
+    loaded = true,
+    path = "/home/natanmoura/.local/share/nvim/site/pack/packer/start/pounce.nvim",
+    url = "https://github.com/rlane/pounce.nvim"
   },
   ["project.nvim"] = {
     config = { "\27LJ\2\2>\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\20configs.project\frequire\0" },
@@ -387,18 +382,18 @@ time([[Config for surround.nvim]], false)
 time([[Config for LuaSnip]], true)
 try_loadstring("\27LJ\2\2M\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14lazy_load luasnip/loaders/from_vscode\frequire\0", "config", "LuaSnip")
 time([[Config for LuaSnip]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\22configs.which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: dashboard-nvim
-time([[Config for dashboard-nvim]], true)
-try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\22configs.dashboard\frequire\0", "config", "dashboard-nvim")
-time([[Config for dashboard-nvim]], false)
 -- Config for: nvim-web-devicons
 time([[Config for nvim-web-devicons]], true)
 try_loadstring("\27LJ\2\2<\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\18configs.icons\frequire\0", "config", "nvim-web-devicons")
 time([[Config for nvim-web-devicons]], false)
+-- Config for: dashboard-nvim
+time([[Config for dashboard-nvim]], true)
+try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\22configs.dashboard\frequire\0", "config", "dashboard-nvim")
+time([[Config for dashboard-nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\22configs.which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Config for: tabout.nvim
 time([[Config for tabout.nvim]], true)
 try_loadstring("\27LJ\2\2=\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\19configs.tabout\frequire\0", "config", "tabout.nvim")
@@ -455,7 +450,7 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'FixCursorHold.nvim', 'gitsigns.nvim', 'nvim-lsp-installer', 'nvim-lspconfig', 'nvim-cmp', 'null-ls.nvim', 'lspsaga.nvim', 'nvim-colorizer.lua', 'neoscroll.nvim', 'nvim-treesitter', 'Comment.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'FixCursorHold.nvim', 'gitsigns.nvim', 'nvim-lsp-installer', 'nvim-lspconfig', 'nvim-cmp', 'null-ls.nvim', 'lspsaga.nvim', 'nvim-colorizer.lua', 'nvim-treesitter', 'neoscroll.nvim', 'Comment.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles(0) end

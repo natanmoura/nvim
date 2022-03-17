@@ -313,11 +313,8 @@ packer.startup {
       end,
     }
 
-    -- Lightspeed
-    use {
-      "ggandor/lightspeed.nvim",
-      after = "nvim-treesitter",
-    }
+    -- Pounce
+    use {"rlane/pounce.nvim"}
 
     -- Indentation
     -- use {
@@ -335,7 +332,7 @@ packer.startup {
       end,
     }
 
-    -- Smooth scrolling
+    -- Smooth scjolling
     use {
       "karb94/neoscroll.nvim",
       event = "BufRead",
@@ -351,6 +348,7 @@ packer.startup {
       tag = 'v1.*',
       config = function()
         require("configs.colors.rose-pine").config()
+
       end,
     }
 

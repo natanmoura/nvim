@@ -50,9 +50,9 @@ map("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 map("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 map("n", "<leader>fo", ":Telescope oldfiles<CR>", opts)
 
--- Lspsaga
+-- Lspsag
 map("n", "gl", ":Lspsaga show_line_diagnostics<CR>", opts)
-map("n", "ca", ":Lspsaga code_action<CR>", opts)
+map("n", "ga", ":Lspsaga code_action<CR>", opts)
 map("n", "K", ":Lspsaga hover_doc<CR>", opts)
 map("n", "rn", ":Lspsaga rename<CR>", opts)
 map("n", "gj", ":Lspsaga diagnostic_jump_next<cr>", opts)
@@ -63,6 +63,12 @@ map("n", "<C-d>", ":lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>"
 -- Comment
 map("n", "<leader>/", ":lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 map("v", "<leader>/", "<esc>:lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", opts)
+
+-- Pounce
+map("n", "s", ":Pounce<CR>", opts)
+map("n", "S", ":PounceRepeat<CR>", opts)
+map("v", "s", ":Pounce<CR>", opts)
+map("x", "gs", ":Pounce<CR>", opts)
 
 -- ForceWrite
 map("n", "<C-w>", ":w!<CR>", opts)
