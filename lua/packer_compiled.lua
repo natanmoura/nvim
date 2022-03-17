@@ -166,8 +166,12 @@ _G.packer_plugins = {
     url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["lightspeed.nvim"] = {
-    loaded = true,
-    path = "/home/natanmoura/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
+    load_after = {
+      ["nvim-treesitter"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/natanmoura/.local/share/nvim/site/pack/packer/opt/lightspeed.nvim",
     url = "https://github.com/ggandor/lightspeed.nvim"
   },
   ["lspsaga.nvim"] = {
@@ -262,6 +266,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
+    after = { "lightspeed.nvim" },
     commands = { "TSInstall", "TSInstallInfo", "TSInstallSync", "TSUninstall", "TSUpdate", "TSUpdateSync", "TSDisableAll", "TSEnableAll" },
     config = { "\27LJ\2\2A\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\23configs.treesitter\frequire\0" },
     loaded = false,
@@ -301,7 +306,7 @@ _G.packer_plugins = {
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
   ["rose-pine"] = {
-    config = { "\27LJ\2\2@\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\22configs.rose-pine\frequire\0" },
+    config = { "\27LJ\2\2G\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\29configs.colors.rose-pine\frequire\0" },
     loaded = true,
     path = "/home/natanmoura/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
@@ -314,6 +319,7 @@ _G.packer_plugins = {
   },
   ["symbols-outline.nvim"] = {
     commands = { "SymbolsOutline" },
+    config = { "\27LJ\2\2F\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\28configs.symbols-outline\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -342,6 +348,11 @@ _G.packer_plugins = {
     path = "/home/natanmoura/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["telescope_sessions_picker.nvim"] = {
+    loaded = true,
+    path = "/home/natanmoura/.local/share/nvim/site/pack/packer/start/telescope_sessions_picker.nvim",
+    url = "https://github.com/JoseConseco/telescope_sessions_picker.nvim"
+  },
   ["vim-bbye"] = {
     load_after = {},
     loaded = true,
@@ -368,10 +379,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Setup for: symbols-outline.nvim
-time([[Setup for symbols-outline.nvim]], true)
-try_loadstring("\27LJ\2\2E\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\28configs.symbols-outline\frequire\0", "setup", "symbols-outline.nvim")
-time([[Setup for symbols-outline.nvim]], false)
 -- Config for: surround.nvim
 time([[Config for surround.nvim]], true)
 try_loadstring("\27LJ\2\2U\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\1\19mappings_style\rsandwich\nsetup\rsurround\frequire\0", "config", "surround.nvim")
@@ -402,7 +409,7 @@ try_loadstring("\27LJ\2\0024\0\0\2\0\3\0\0056\0\0\0009\0\1\0)\1\1\0=\1\2\0K\0\1\
 time([[Config for filetype.nvim]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\22configs.rose-pine\frequire\0", "config", "rose-pine")
+try_loadstring("\27LJ\2\2G\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\29configs.colors.rose-pine\frequire\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)

@@ -7,6 +7,7 @@ function M.config()
   end
 
   local actions = require "telescope.actions"
+  local sessions_picker = telescope.load_extension("sessions_picker")
 
   telescope.setup {
     defaults = {
@@ -78,7 +79,11 @@ function M.config()
       },
     },
     pickers = {},
-    extensions = {},
+    extensions = {
+      sessions_picker = {
+        sessions_dir = vim.fn.stdpath('data') ..'/session/',  -- same as '/home/user/.local/share/nvim/session'
+      }
+    },
   }
 end
 

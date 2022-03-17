@@ -67,14 +67,16 @@ function M.config()
   }
 
   local mappings = {
+    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["d"] = { "<cmd>Dashboard<cr>", "Dashboard" },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["w"] = { "<cmd>w<CR>", "Save" },
-    ["q"] = { "<cmd>q<CR>", "Quit" },
-    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-    ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["f"] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files", },
     ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+    ["q"] = { "<cmd>q<CR>", "Quit" },
+    ["S"] = { "<cmd>Telescope sessions_picker<cr>", "Sessions"},
+    ["w"] = { "<cmd>w<CR>", "Save" },
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<cr>", "Comment" },
 
     p = {
@@ -88,7 +90,8 @@ function M.config()
 
     g = {
       name = "Git",
-      g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+      g = { "<cmd>Git<cr>", "Fugitive" },
+      G = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
       j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
       k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
       l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },

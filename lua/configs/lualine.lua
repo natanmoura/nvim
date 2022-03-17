@@ -100,7 +100,7 @@ function M.config()
     },
     sections = {
       lualine_a = { mode },
-      lualine_b = { branch },
+      lualine_b = { branch, "filename"},
       lualine_c = { diagnostics },
       lualine_x = { lsp_progress, diff },
       lualine_y = { filetype },

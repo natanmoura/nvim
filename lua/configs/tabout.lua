@@ -1,8 +1,8 @@
 local M = {}
 
 function M.config()
-  local tabout_status_ok, tabout = pcall(require, "tabout")
-  if not tabout_status_ok then
+  local status_ok, tabout = pcall(require, "tabout")
+  if not status_ok then
     return
   end
 

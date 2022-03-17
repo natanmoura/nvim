@@ -7,7 +7,7 @@ function M.config()
   end
 
   treesitter.setup {
-    ensure_installed = "maintined",
+    ensure_installed = "maintained",
     sync_install = false,
     ignore_install = {},
     highlight = {
