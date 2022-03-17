@@ -190,8 +190,8 @@ packer.startup {
     use {
       "simrat39/symbols-outline.nvim",
       cmd = "SymbolsOutline",
-      setup = function()
-        require("configs.symbols-outline").setup()
+      config = function()
+        require("configs.symbols-outline").config()
       end,
     }
 
@@ -217,6 +217,11 @@ packer.startup {
     use {
       "nvim-telescope/telescope-fzf-native.nvim",
       run = "make",
+    }
+
+    -- Sessions picker
+    use {
+      "JoseConseco/telescope_sessions_picker.nvim",
     }
 
     -- Project management
@@ -253,6 +258,7 @@ packer.startup {
         require("configs.colorizer").config()
       end,
     }
+
 
     -- Autopairs
     use {
@@ -298,7 +304,7 @@ packer.startup {
       end,
     }
 
-    -- Commenting
+    -- Commentin
     use {
       "numToStr/Comment.nvim",
       event = "BufRead",
@@ -308,7 +314,10 @@ packer.startup {
     }
 
     -- Lightspeed
-    use {'ggandor/lightspeed.nvim',}
+    use {
+      "ggandor/lightspeed.nvim",
+      after = "nvim-treesitter",
+    }
 
     -- Indentation
     -- use {
@@ -341,9 +350,38 @@ packer.startup {
       as = 'rose-pine',
       tag = 'v1.*',
       config = function()
-        require("configs.rose-pine").config()
+        require("configs.colors.rose-pine").config()
       end,
     }
+
+    -- use {
+    --   "eddyekofo94/gruvbox-flat.nvim",
+    --   config = function()
+    --     require("configs.colors.gruvbox-flat").config()
+    --   end,
+    -- }
+
+    -- use {
+    --   "ellisonleao/gruvbox.nvim",
+    --   config = function()
+    --     require("configs.colors.gruvbox").config()
+    --   end,
+    -- }
+
+    -- use {
+    --   "shaunsingh/nord.nvim",
+    --   config = function()
+    --     require("configs.colors.nord").config()
+    --   end,
+    -- }
+
+    -- use {
+    --   "rebelot/kanagawa.nvim",
+    --   config = function()
+    --     require("configs.colors.kanagawa").config()
+    --   end,
+    -- }
+
     -- User defined plugins
     if config.plugins and not vim.tbl_isempty(config.plugins) then
       for _, plugin in pairs(config.plugins) do
