@@ -273,6 +273,7 @@ packer.startup {
     use {
       "abecodes/tabout.nvim",
       wants = "nvim-treesitter",
+      after = {"nvim-cmp", "LuaSnip"},
       config = function()
         require("configs.tabout").config()
       end
@@ -304,7 +305,7 @@ packer.startup {
       end,
     }
 
-    -- Commentin
+    -- Commenting
     use {
       "numToStr/Comment.nvim",
       event = "BufRead",
